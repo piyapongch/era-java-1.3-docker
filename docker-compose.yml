@@ -9,11 +9,12 @@ volumes:
 services:
   mysql:
     restart: always
-    image: mysql:5.7
+    image: mysql:5.0
     env_file: .env_fedora
     command: --init-file /data/init.sql
     volumes:
       - mysql:/var/lib/mysql
+      - ./mysql/conf:/etc/mysql/conf.d
       - ./mysql/data:/data
     ports:
       - "3306:3306"
