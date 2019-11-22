@@ -9,7 +9,7 @@ volumes:
 services:
   mysql:
     restart: always
-    image: mysql:5.0
+    image: mysql:5.7
     env_file: .env_fedora
     command: --init-file /data/init.sql
     volumes:
